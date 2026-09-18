@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARIS</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧭</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner reveal" id="heroReveal">
+      <h1>ARIS</h1>
+      <p class="sub">An AI teammate that already knows the pipeline.</p>
+      <div class="chevron"></div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section style="padding-top:100px; padding-bottom:100px">
+    <div class="wrap reveal">
+      <h2 class="head">Get the highlights.</h2>
+      <div class="hl-grid">
+        <div class="hl-card">
+          <div class="hl-kicker">The evidence</div>
+          <h3 id="hlPainHeadline">76% say finding documentation is their #1 challenge</h3>
+          <p>The most common productivity challenge the team named, by a wide margin.</p>
+        </div>
+        <div class="hl-card">
+          <div class="hl-kicker">In their words</div>
+          <h3>Unfiltered feedback</h3>
+          <p>"It is sometimes hard to find the right data owners, up-to-date documentation, and clear data lineage."</p>
+        </div>
+        <div class="hl-card">
+          <div class="hl-kicker">What it does</div>
+          <h3>Reads the project, answers in plain language</h3>
+          <p>ARIS sits on the project's data pipelines and turns flows, datasets and transformations into answers anyone can query.</p>
+        </div>
+        <div class="hl-card">
+          <div class="hl-kicker">Where it's going</div>
+          <h3>Text-to-ARD build</h3>
+          <p>The long-term direction: describe what's needed in plain language, and ARIS generates the pipeline itself.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section>
+    <div class="wrap reveal">
+      <h2 class="head">Good engineers keep re-learning what someone else already knew.</h2>
+      <p class="lede">Lineage, transformation logic and business definitions live in people's heads and scattered documents. <b>Every new hand on a pipeline starts from close to zero.</b></p>
+    </div>
+  </section>
+
+  <!-- METHODOLOGY -->
+  <section id="evidence">
+    <div class="wrap reveal">
+      <p class="kicker">Before building more</p>
+      <h2 class="head">We asked the people already living in it.</h2>
+      <p class="lede">A pulse survey across the commercial data engineering team, running since September 2026.<sup class="fn">1</sup></p>
+      <div class="stat-grid" id="roleStatsGrid" style="max-width:760px; margin-left:auto; margin-right:auto"></div>
+
+      <div class="upload-row">
+        <span class="upload-status" id="dataStatus">Loading…</span>
+        <button class="reset-link" id="reloadData" type="button">Reload page</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN POINTS -->
+  <section>
+    <div class="wrap reveal">
+      <h2 class="head">The problems that came up most.</h2>
+      <p class="lede">Share of respondents naming each a top productivity challenge, n=<span id="painN">21</span>.</p>
+      <div class="stat-grid" id="painPointsGrid"></div>
+    </div>
+  </section>
+
+  <!-- VOICES -->
+  <section>
+    <div class="wrap reveal">
+      <h2 class="head" style="margin-bottom:56px">What the team told us, unfiltered.</h2>
+      <div class="quote">
+        <p>"Project information is scattered across emails, chats, meeting notes, and documents."</p>
+        <cite>Engineer / Developer · 2+ years on the project</cite>
+      </div>
+      <div class="quote">
+        <p>"Identifying the appropriate dataset for a business problem is often time-consuming."</p>
+        <cite>Engineer / Developer · 2+ years on the project</cite>
+      </div>
+      <div class="quote">
+        <p>"It is sometimes hard to find the right data owners, up-to-date documentation, and clear data lineage — the biggest improvement would be one clear place to find all three."</p>
+        <cite>Engineer / Developer · 1–2 years on the project</cite>
+      </div>
+      <div class="quote">
+        <p>"Understanding the business perspective and use cases of a new project takes considerable time when onboarding."</p>
+        <cite>New Joiner · less than 1 month on the project</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIXES WANTED -->
+  <section>
+    <div class="wrap reveal">
+      <h2 class="head">What the team asked for, most often.</h2>
+      <div class="stat-grid" id="fixesGrid"></div>
+    </div>
+  </section>
+
+  <!-- AI VALUE -->
+  <section>
+    <div class="wrap reveal">
+      <h2 class="head">The team already believes this would help.</h2>
+      <div class="big-stat" id="aiValueBig">0%</div>
+      <p class="big-stat-label">rate an AI-powered project-knowledge assistant at least moderately valuable</p>
+      <div class="second-stat" id="aiValueSecond">0%</div>
+      <p class="second-stat-label">call it "very" or "extremely" valuable</p>
+      <div class="prop-bar" id="propBar" aria-hidden="true"></div>
+      <div class="prop-legend" id="propLegend"></div>
+    </div>
+  </section>
+
+  <!-- TIME COST -->
+  <section>
+    <div class="wrap reveal">
+      <h2 class="head">Small pockets of friction add up fast.</h2>
+      <div class="stat-grid" id="timeCostGrid"></div>
+    </div>
+  </section>
+
+  <!-- TURN -->
+  <section>
+    <div class="wrap reveal">
+      <h2 class="head" style="max-width:820px; margin:0 auto">This is exactly the gap ARIS was built to close.</h2>
+    </div>
+  </section>
+
+  <!-- MEET ARIS -->
+  <section id="solution">
+    <div class="wrap reveal">
+      <h2 class="head">An AI teammate that already knows the project.</h2>
+      <p class="lede">ARIS reads a project's pipelines and turns the flows, datasets and transformations already built there into <b>knowledge anyone on the team can query</b>.</p>
+      <div class="triptych">
+        <div><h3>Reads the project</h3><p>Understands flows, datasets, and transformations already built in the pipeline.</p></div>
+        <div><h3>Answers in plain language</h3><p>Turns tribal knowledge into instant, searchable answers for anyone on the team.</p></div>
+        <div><h3>Documents as it goes</h3><p>Keeps lineage, definitions, and ownership current, automatically.</p></div>
+      </div>
+
+      <div class="contrast">
+        <div class="contrast-col">
+          <span class="contrast-badge">Today</span>
+          <h3>Without ARIS</h3>
+          <div class="contrast-row"><div class="cat">Finding answers</div><div class="val">Ask around, dig through chats and old docs</div></div>
+          <div class="contrast-row"><div class="cat">Onboarding</div><div class="val">Weeks to get oriented on a new pipeline</div></div>
+          <div class="contrast-row"><div class="cat">Documentation</div><div class="val">Scattered, often out of date</div></div>
+          <div class="contrast-row"><div class="cat">Ownership</div><div class="val">Unclear who owns what, or who to ask</div></div>
+        </div>
+        <div class="contrast-col is-aris">
+          <span class="contrast-badge">With ARIS</span>
+          <h3>The gap closed</h3>
+          <div class="contrast-row"><div class="cat">Finding answers</div><div class="val">Ask ARIS, get a sourced answer</div></div>
+          <div class="contrast-row"><div class="cat">Onboarding</div><div class="val">Query the project from day one</div></div>
+          <div class="contrast-row"><div class="cat">Documentation</div><div class="val">Generated and kept current automatically</div></div>
+          <div class="contrast-row"><div class="cat">Ownership</div><div class="val">Owners and SMEs surfaced automatically</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURE (pinned build) -->
+  <section class="pin-wrap" id="archPin">
+    <div class="pin-inner" id="architecture">
+      <div class="wrap wide">
+        <h2 class="head">How it's built — today, and at scale.<sup class="fn">2</sup></h2>
+        <p class="lede" style="max-width:700px">It runs today for free, on tools already paid for. Scaling it to the whole team is a short, specific list — shown under each block below.</p>
+        <div class="arch-wrap">
+          <svg viewBox="0 0 1200 430" width="100%" style="max-width:1140px" role="img" aria-label="ARIS architecture, shown at two tiers. Today, at zero cost: Dataiku feeds SharePoint, which feeds Microsoft Copilot, which answers questions in chat. At scale: Dataiku plus a Neo4j lineage graph feeds a dedicated search index such as Azure AI Search, which feeds a dedicated reasoning engine such as Azure OpenAI with MCP orchestration, enabling both chat and a planned ARD generator.">
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="rgba(0,0,0,0.4)"></path>
+              </marker>
+            </defs>
+
+            <g class="arch-stage" data-stage="0">
+              <rect x="20" y="100" width="260" height="150" rx="14" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="1.75"></rect>
+              <text x="150" y="145" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="19" font-weight="600" fill="#1d1d1f">Data &amp; Lineage</text>
+              <text x="150" y="180" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="14" fill="#86868b">Today: Dataiku</text>
+              <text x="150" y="203" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="14" fill="#86868b">At scale: + Neo4j graph</text>
+            </g>
+
+            <line class="arch-stage" data-stage="1" x1="280" y1="175" x2="328" y2="175" stroke="rgba(0,0,0,0.4)" stroke-width="1.75" marker-end="url(#arrow)"></line>
+
+            <g class="arch-stage" data-stage="1">
+              <rect x="330" y="100" width="260" height="150" rx="14" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="1.75"></rect>
+              <text x="460" y="145" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="19" font-weight="600" fill="#1d1d1f">Knowledge Index</text>
+              <text x="460" y="180" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="14" fill="#86868b">Today: SharePoint</text>
+              <text x="460" y="203" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="14" fill="#86868b">At scale: Azure AI Search</text>
+            </g>
+
+            <line class="arch-stage" data-stage="2" x1="590" y1="175" x2="638" y2="175" stroke="rgba(0,0,0,0.4)" stroke-width="1.75" marker-end="url(#arrow)"></line>
+
+            <g class="arch-stage" data-stage="2">
+              <rect x="640" y="100" width="280" height="150" rx="14" fill="#1d1d1f" stroke="#1d1d1f" stroke-width="1.75"></rect>
+              <text x="780" y="145" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="19" font-weight="600" fill="#ffffff">Reasoning Engine</text>
+              <text x="780" y="180" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="14" fill="rgba(255,255,255,0.72)">Today: Microsoft Copilot</text>
+              <text x="780" y="203" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="14" fill="rgba(255,255,255,0.72)">At scale: Azure OpenAI + MCP</text>
+            </g>
+
+            <g class="arch-stage" data-stage="3">
+              <line x1="920" y1="175" x2="955" y2="175" stroke="rgba(0,0,0,0.4)" stroke-width="1.75"></line>
+              <line x1="955" y1="175" x2="955" y2="95" stroke="rgba(0,0,0,0.4)" stroke-width="1.75"></line>
+              <line x1="955" y1="175" x2="955" y2="325" stroke="rgba(0,0,0,0.4)" stroke-width="1.75"></line>
+              <line x1="955" y1="95" x2="978" y2="95" stroke="rgba(0,0,0,0.4)" stroke-width="1.75" marker-end="url(#arrow)"></line>
+              <line x1="955" y1="325" x2="978" y2="325" stroke="rgba(0,0,0,0.4)" stroke-width="1.75" marker-end="url(#arrow)"></line>
+            </g>
+
+            <g class="arch-stage" data-stage="3">
+              <rect x="980" y="20" width="200" height="150" rx="14" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="1.75"></rect>
+              <text x="1080" y="90" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="18" font-weight="600" fill="#1d1d1f">Chat / Q&amp;A</text>
+              <text x="1080" y="122" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="14" fill="#86868b">Available today</text>
+            </g>
+
+            <g class="arch-stage" data-stage="4">
+              <rect x="980" y="250" width="200" height="150" rx="14" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="1.75" stroke-dasharray="6 5"></rect>
+              <text x="1080" y="315" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="18" font-weight="600" fill="#1d1d1f">ARD Generator</text>
+              <text x="1080" y="345" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="14" fill="#86868b">Planned</text>
+              <text x="1080" y="366" text-anchor="middle" font-family="-apple-system,sans-serif" font-size="14" fill="#86868b">Needs the scale tier</text>
+            </g>
+          </svg>
+        </div>
+        <p class="arch-note">"Today" runs on tools already licensed — no new spend. "At scale" is the specific ask for handling the whole team's traffic reliably. Conceptual — not a verified technical spec.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION -->
+  <section>
+    <div class="wrap reveal">
+      <h2 class="head">From answering questions to building the ARD itself.</h2>
+      <p class="lede">The long-term direction is text-to-ARD build: describe what's needed in plain language, and <b style="color:var(--ink)">ARIS generates the pipeline — clean, QC-checked and documented</b>.</p>
+      <div class="steps">
+        <span class="step">Ask, in plain language</span><span class="step-sep">›</span>
+        <span class="step">ARIS drafts the pipeline</span><span class="step-sep">›</span>
+        <span class="step">Delivered clean and documented</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section id="roadmap">
+    <div class="wrap reveal">
+      <h2 class="head">Three phases, building on what's already working.<sup class="fn">3</sup></h2>
+      <div class="timeline">
+        <div class="timeline-line"></div>
+        <div class="timeline-row">
+          <div class="timeline-item">
+            <div class="phase">Phase 1 · [Timeframe]</div>
+            <h3>Knowledge assistant</h3>
+            <p>Pilot ARIS as a Q&amp;A layer with one team.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="phase">Phase 2 · [Timeframe]</div>
+            <h3>Living documentation</h3>
+            <p>Lineage and docs that stay current as pipelines change.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="phase">Phase 3 · [Timeframe]</div>
+            <h3>Text-to-ARD build</h3>
+            <p>Natural-language requests become ready-to-ship pipelines.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASK -->
+  <section id="ask">
+    <div class="wrap reveal">
+      <h2 class="head">Three things to move ARIS from pilot to platform.</h2>
+      <div class="ask-list">
+        <div class="ask-item"><p><em>A named pilot team</em> — to run ARIS against real, daily work.</p></div>
+        <div class="ask-item"><p><em>Dedicated engineering time</em> — to move it from prototype to production.</p></div>
+        <div class="ask-item"><p><em>An executive sponsor</em> — to champion adoption beyond the pilot.</p></div>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>Is the survey sample enough to act on?</summary>
+          <p class="faq-a">It's a pulse check, not a statistically definitive study — but the top pain points and the top requested fixes line up closely with what ARIS already does, and that pattern has held as the sample has grown. The survey is still open.</p>
+        </details>
+        <details>
+          <summary>What does ARIS do today versus the roadmap?</summary>
+          <p class="faq-a">Today: it reads the project's pipelines and answers questions in plain language. Planned: automatic documentation, and eventually generating new pipelines from a written request — text-to-ARD build.</p>
+        </details>
+        <details>
+          <summary>What would the pilot actually need from leadership?</summary>
+          <p class="faq-a">A named pilot team, dedicated engineering time, and an executive sponsor to back adoption beyond that first team — the three items above.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="closing">
+    <div class="wrap reveal">
+      <h1>Thank you.</h1>
+      <p>Questions and discussion — ARIS, Commercial Data Engineering.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footnotes">
+      <p>1. Based on an internal pulse survey of <span id="fnCount">21</span> respondents across the commercial data engineering team, September 2026 onward. Directional, not a statistically representative sample. Numbers recalculate from <code>logs/survey.csv</code> — after editing it, run <code>python3 convert.py</code> and reload the page.</p>
+      <p>2. Architecture shown is conceptual, reflecting known ARIS capabilities and roadmap intent — not a verified technical specification.</p>
+      <p>3. Phase timeframes to be confirmed with leadership.</p>
+    </div>
+    ARIS — internal, Novartis Hyderabad
+  </footer>
+
+</main>
+
+<script src="logs/survey-data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
